@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 35vw;
+  height: 70vh;
+}
+
+
