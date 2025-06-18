@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 45%;
+  gap: 2.5rem;
   .options {
     display: flex;
     gap: 0.5rem;
@@ -28,7 +28,17 @@
   button {
     padding: 1.2rem 0.8rem;
     border: none;
-    border-radius: 10px;
-    color: #90a5b0;
+    border-radius: 15px;
+    // color: #90a5b0;
+    color: black;
+  }
+}
+
+@media (max-width: 767px) {
+  .game-info-row {
+    gap: 0.5rem;
+    #player-turn {
+      padding: 0 0.8rem;
+    }
   }
 }

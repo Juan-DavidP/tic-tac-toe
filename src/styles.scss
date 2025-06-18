@@ -12,3 +12,9 @@ app-game-info{
     display: flex;
     justify-content: center;
 }
+
+@media(width < 767px){
+    app-game-info{
+        width: 100vw;
+    }
+}

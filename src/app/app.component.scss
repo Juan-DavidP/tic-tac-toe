@@ -1,4 +1,13 @@
-app-container{
+app-container {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  app-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 70vh;
+  }
 }
