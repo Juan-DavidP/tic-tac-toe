@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { GameLogicService } from '../../services/game-logic.service';
 @Component({
   selector: 'app-game-info',
   standalone: true,
@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class GameInfoComponent {
 
+  service = inject(GameLogicService)
 }

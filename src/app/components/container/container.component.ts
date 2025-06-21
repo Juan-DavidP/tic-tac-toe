@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FieldComponent } from "./field/field.component";
 
 @Component({
@@ -9,8 +9,6 @@ import { FieldComponent } from "./field/field.component";
   styleUrl: './container.component.scss'
 })
 export class ContainerComponent {
-  value = ""
-  changeValue(){
-    this.value = "X"
-  }
+  
+  
 }

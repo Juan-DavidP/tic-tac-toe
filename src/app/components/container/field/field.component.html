@@ -1,1 +1,3 @@
-<button class="field-square"></button>
+<button class="field-square" [ngStyle]="{'color':value === 'X'? '#27C5BC':'#F4B246'}" (click)="changeValue()">
+  {{ value }}
+</button>
