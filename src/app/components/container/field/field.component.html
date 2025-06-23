@@ -1,6 +1,6 @@
 <button
   class="field-square"
-  [disabled]="value"
+  [disabled]="value || gameOver()"
   [ngStyle]="{
     color: value === 'X' ? '#27C5BC' : '#F4B246'
   }"

@@ -6,10 +6,9 @@ import { Position } from '../models/position';
 })
 export class GameLogicService {
 
-  positions = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
   /* lógica anterior
   positions: Position = {0: "X",1: "O",2: "X",3: "O",4: "X",5: "O",6: "X",7: "O",8: "X",}*/
+  positions = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   possibilities: number[][] = [
     [0, 1, 2], // Horizontal superior
@@ -23,10 +22,11 @@ export class GameLogicService {
   ]; // 4, 3, 6, 8
 
   turn = signal("");
-  // gamedPosition: Position[] = []; lógica anterior
+  //gamedPosition: Position[] = []; // lógica anterior
   gameTurn = 0;
   positionsX: number[] = [];
   positionsO: number[] = [];
+  gameOver = signal(false);
 
   changeValue(): void {
     if (this.turn() === "" || this.turn() === "O") {
@@ -38,8 +38,6 @@ export class GameLogicService {
       this.gameWon()
     }, 10);
   }
-
-
 
   setGamePosition(position: number): void {
     if (this.turn() === "X") {
@@ -64,16 +62,20 @@ export class GameLogicService {
         */
         if (xWins) {
           alert("¡Ganador X!");
+          console.log(currentPossibility);
+          this.gameOver.set(true);
           return;
         }
 
         const oWins = currentPossibility.every(pos => this.positionsO.includes(pos));
         if (oWins) {
           alert("¡Ganador O!");
+          this.gameOver.set(true);
           return;
         }
       }
     }
+
     if (this.gameTurn === 9) {
       alert("empate")
     }
