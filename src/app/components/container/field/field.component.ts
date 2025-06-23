@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { GameLogicService } from '../../../services/game-logic.service';
 import { NgStyle } from '@angular/common';
 
@@ -10,13 +10,14 @@ import { NgStyle } from '@angular/common';
   styleUrl: './field.component.scss'
 })
 export class FieldComponent {
-  service = inject(GameLogicService)
+  service = inject(GameLogicService);
 
-  value = this.service.turn()
+  value = this.service.turn();
+  id = input.required<number>();
 
   changeValue() {
     this.service.changeValue()
     this.value = this.service.turn()
+    this.service.setGamePosition(this.id())
   }
-
 }

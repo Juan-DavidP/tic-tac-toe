@@ -1,11 +1,5 @@
 <div class="container">
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
-  <app-field />
+  @for (position of positions; track $index) {
+  <app-field [id]="position" />
+  }
 </div>

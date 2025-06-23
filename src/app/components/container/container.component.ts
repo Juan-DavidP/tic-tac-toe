@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FieldComponent } from "./field/field.component";
+import { GameLogicService } from '../../services/game-logic.service';
 
 @Component({
   selector: 'app-container',
@@ -10,5 +11,10 @@ import { FieldComponent } from "./field/field.component";
 })
 export class ContainerComponent {
   
+  service = inject(GameLogicService)
+
+  positions = this.service.positions;
+
+  // Object = Object;
   
 }
